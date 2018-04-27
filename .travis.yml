@@ -1,3 +1,9 @@
 language: cpp
 compiler: gcc
 script: make && make test
+
+before_install:
+  - pip install --user cpp-coveralls
+
+after_success:
+  - coveralls --include "balanced.cpp" --gcov-options '\-lp'
