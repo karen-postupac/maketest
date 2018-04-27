@@ -17,8 +17,3 @@ test: balanced.o
 balanced.o:
 	g++ $(CXXFLAGS) -std=c++11 -g -c balanced.cpp -o balanced.o
 
-before_install:
-  - pip install --user cpp-coveralls
-
-after_success:
-  - coveralls --include "balanced.cpp" --gcov-options '\-lp'
